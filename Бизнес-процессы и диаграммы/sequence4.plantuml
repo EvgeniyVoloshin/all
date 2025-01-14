@@ -1,0 +1,12 @@
+@startuml
+autonumber
+actor user as us
+participant rabbitMQ as rb
+participant server as sv 
+participant database as db
+
+us -> rb: GET query params
+
+rb -> sv: message to server with que
+sv --> us: response with rabbitMQ
+sv ->db: query message

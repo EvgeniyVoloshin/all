@@ -1,0 +1,34 @@
+@startuml
+autoactivate on
+autonumber
+skinparam Legend {
+BackgroundColor Linen
+FontColor black
+BorderThickness 0
+FontSize 10
+}
+skinparam {
+MaxMessageSize 300
+}
+skinparam sequence{
+ParticipantPadding 40
+MessageAlign left
+}
+
+
+participant "Психолог" as Foo order 15
+participant "Математик" as Foo1 order 30 
+participant "Экономист" as Foo2 order 45
+Participant "Юрист" as Foo3 order 60
+Foo -> Foo1: Сколько будет дважды два?
+Foo1 -> Foo: Четыре
+deactivate Foo1
+Foo -> Foo2: Сколько будет дважды два?
+deactivate Foo
+deactivate Foo2
+Foo2 -> Foo2: Думает несколько минут
+Foo2 -> Foo: Четыре плюс минус один
+Foo -> Foo3: Сколько будет дважды два?
+deactivate Foo
+Foo3 -> Foo: А сколько вы хотите получить?
+@enduml

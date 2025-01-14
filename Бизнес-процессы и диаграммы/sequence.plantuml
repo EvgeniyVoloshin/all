@@ -1,0 +1,10 @@
+@startuml тренировка 1
+autonumber
+User -> Client: Наполнить корзину и подтвердить заказ
+Client -> Client: Отобразить, что заказ отправлен на обработку
+Client -> Server: Передать данные заказа
+Server -> Server: Обработать заказ на сервере
+Server -> Server: Обновить статус заказа
+Server --> Client: Передать статус заказа
+Client -> Client: отобразить статус заказа
+@enduml

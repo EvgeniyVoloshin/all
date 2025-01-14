@@ -1,0 +1,19 @@
+@startuml тренировка 2
+autonumber
+skinparam MaxMessageSize 150
+Actor "Пользователь Дорогой" as u order 10
+participant "Клиент \nРодимый" as c order 20
+participant "Сервант \nВеликолепный" as s order 30
+queue "Брокерок" as br order 25
+database "Базенка" as db order 27
+
+u -> c: Наполнить корзину и подтвердить заказ
+c -> c: Отобразить, что заказ отправлен на обработку
+c -> s: Передать данные заказа
+s -> s: Обработать заказ на сервере
+!$st = "статус и стоимость заказа"
+s -> s: Обновить $st
+s --> c: Переделать $st
+c -> c: Отобразить $st
+
+@enduml 
